@@ -22,13 +22,13 @@ export class PhotoManagementComponent implements OnInit {
     });
   }
 
-  approvePhoto(photoId) {
+  approvePhoto(photoId: number) {
     this.adminService.approvePhoto(photoId).subscribe(() => {
       this.photos.splice(this.photos.findIndex(p => p.id === photoId), 1);
     });
   }
 
-  rejectPhoto(photoId) {
+  rejectPhoto(photoId: number) {
     this.adminService.rejectPhoto(photoId).subscribe(() => {
       this.photos.splice(this.photos.findIndex(p => p.id === photoId), 1);
     });
